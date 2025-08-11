@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nehal Fathema - Social Media Manager</title>
+
+<!-- Google Fonts: Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --purple: #6C63FF;
+        --pink: #FF6584;
+        --teal: #00BFA6;
+        --dark: #0F172A;
+        --light: #F9F9FB;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--dark);
+        color: var(--light);
+        overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Navbar */
+    nav {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 20px 40px; background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000;
+    }
+    .logo {
+        font-size: 1.4rem; font-weight: 700;
+        background: linear-gradient(90deg, var(--purple), var(--teal));
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    nav a { margin-left: 20px; color: var(--light); font-weight: 500; }
+    nav a:hover { color: var(--pink); }
+
+    /* Hero */
+    .hero {
+        position: relative; text-align: center; padding: 100px 20px;
+        background: linear-gradient(135deg, var(--purple), var(--teal));
+        color: white; overflow: hidden;
+    }
+    .hero::before {
+        content: ""; position: absolute; top: -50%; left: -50%;
+        width: 200%; height: 200%;
+        background: conic-gradient(var(--purple), var(--pink), var(--teal), var(--purple));
+        animation: spin 12s linear infinite; opacity: 0.2;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hero-content { position: relative; z-index: 1; }
+    .hero img {
+        width: 180px; height: 180px; border-radius: 50%; border: 4px solid white;
+        object-fit: cover; animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .hero h1 { font-size: 2.5rem; margin-top: 20px; font-weight: 700; }
+    .hero p { font-size: 1.2rem; margin: 10px auto; max-width: 700px; }
+    .btn-primary {
+        display: inline-block; margin-top: 20px; padding: 12px 24px;
+        font-weight: 600; border-radius: 8px;
+        background: var(--pink); color: white; transition: transform 0.3s;
+    }
+    .btn-primary:hover { transform: scale(1.05); }
+    .social-icons {
+        margin-top: 30px; display: flex; justify-content: center; gap: 15px;
+    }
+    .social-icons a {
+        font-size: 1.5rem; background: white; color: var(--purple);
+        padding: 10px; border-radius: 50%; transition: transform 0.3s, background 0.3s;
+    }
+    .social-icons a:hover { transform: translateY(-5px); background: var(--pink); color: white; }
+
+    /* Sections */
+    section { max-width: 1100px; margin: auto; padding: 60px 20px; }
+    .glass-card {
+        background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 30px;
+        backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 40px; opacity: 0; transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+    .glass-card.show { opacity: 1; transform: translateY(0); }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+    .skill {
+        background: linear-gradient(90deg, var(--purple), var(--teal)); padding: 8px 14px;
+        border-radius: 6px; color: white; font-size: 0.9rem; transition: transform 0.3s;
+    }
+    .skill:hover { transform: translateY(-3px) scale(1.05); }
+
+    /* Portfolio Grid */
+    .portfolio-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+    }
+    .portfolio-item {
+        background: rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 20px;
+        transition: transform 0.3s; cursor: pointer;
+    }
+    .portfolio-item:hover { transform: translateY(-5px); }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #94A3B8; }
+</style>
+<script src="https://kit.fontawesome.com/4b12345678.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Nehal Fathema</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <img src="./profile.jpg" alt="Profile Picture">
+        <h1>Hi, I'm Nehal Fathema</h1>
+        <p>Creative Social Media Manager | Turning followers into loyal fans and clicks into customers through strategy, content, and community.</p>
+        <a href="#contact" class="btn-primary">Let’s Collaborate</a>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="glass-card">
+    <h2>About Me</h2>
+    <p>With a strong foundation in Computer Science and a passion for digital creativity, I help brands grow their online presence through strategic storytelling, engaging visuals, and community-driven content. I’ve managed campaigns that boosted engagement by up to 40%, created content that increased subscriptions by 15%, and developed websites that improved lead generation by 35%.</p>
+</section>
+
+<section id="skills" class="glass-card">
+    <h2>Skills</h2>
+    <p>I combine creativity with data-driven strategies to deliver measurable results.</p>
+    <div class="skills-list">
+        <div class="skill">Social Media Strategy</div>
+        <div class="skill">Content Creation & Copywriting</div>
+        <div class="skill">Graphic Design</div>
+        <div class="skill">Video Editing & Production</div>
+        <div class="skill">Community Management</div>
+        <div class="skill">Analytics & Reporting</div>
+        <div class="skill">Brand Building</div>
+        <div class="skill">Trend Analysis</div>
+        <div class="skill">Campaign Impact Measurement</div>
+    </div>
+</section>
+
+<section id="experience" class="glass-card">
+    <h2>Experience</h2>
+    <p><strong>Vision Care Opticals – Digital Marketing (2024)</strong><br>
+    Increased online inquiries by 35% and profits by 10% through a revamped website and targeted campaigns.</p>
+    <p><strong>AlgoZenith VIIT – Lead (2024-2025)</strong><br>
+    Mentored 500+ students, drove 40% more interactions, and organized events that boosted community engagement.</p>
+    <p><strong>AlgoZenith – Content Writer & Graphic Designer (2024-2025)</strong><br>
+    Produced educational materials for 1,000+ students, increasing course engagement by 25% and subscriptions by 15%.</p>
+</section>
+
+<section id="portfolio" class="glass-card">
+    <h2>Portfolio Highlights</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <h3>LinkedIn Growth Campaign</h3>
+            <p>Achieved 40% increase in engagement in 3 months using Reels, carousel posts, and interactive stories.</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Website Revamp</h3>
+            <p>Redesigned company website for Vision Care Opticals, leading to a 35% boost in inquiries.</p>
+        </div>
+        <div class="portfolio-item">
+            <h3>Brand Awareness Series</h3>
+            <p>Developed an educational content series that attracted 1,000+ new followers in 2 weeks.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="glass-card">
+    <h2>Let’s Work Together</h2>
+    <p>If you’re looking for a creative partner to grow your social media presence, I’d love to connect.</p>
+    <p>Email: <a href="mailto:nehalfathema.smm@gmail.com">nehalfathema.smm@gmail.com</a></p>
+    <p>Phone: +91 6302291233</p>
+    <a href="#" class="btn-primary">Download Resume</a>
+</section>
+
+<footer>
+    © 2025 Nehal Fathema | Social Media Magic Happens Here
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.glass-card').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
